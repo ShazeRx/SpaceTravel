@@ -1,6 +1,7 @@
 import os
-from dotenv import load_dotenv
 from pathlib import Path
+
+from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -16,6 +17,11 @@ ALLOWED_HOSTS = [os.getenv("BASE_URL", "127.0.0.1")]
 # Application definition
 
 INSTALLED_APPS = [
+    'health_check',
+    'health_check.db',
+    'health_check.cache',
+    'health_check.storage',
+    'health_check.contrib.migrations',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

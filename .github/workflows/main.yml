@@ -34,8 +34,8 @@ jobs:
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: ${{secrets.APP_NAME}}
-          healthcheck: "https://${{secrets.APP_NAME}}.herokuapp.com/health"
-          rollbackonhealthcheckfailed: true
+          # healthcheck: "https://${{secrets.APP_NAME}}.herokuapp.com/health"
+          # rollbackonhealthcheckfailed: true
         env:
           HD_SECRET: ${{secrets.SECRET}}
           HD_BASE_URL: "https://${{secrets.APP_NAME}}.herokuapp.com"
