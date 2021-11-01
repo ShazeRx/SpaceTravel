@@ -25,11 +25,10 @@ jobs:
     if: github.ref == 'refs/heads/main'
     environment:
       name: spacetravel-prod
-      url: "https://${{steps.step_deploy.outputs.BASE_URL}}.herokuapp.com"
+      url: "https://${{steps.step_set_url.outputs.BASE_URL}}.herokuapp.com"
     steps:
       - uses: actions/checkout@v2
       - name: Heroku deployment
-        id: step_deploy
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_email: ${{secrets.HEROKU_EMAIL}}
@@ -37,10 +36,14 @@ jobs:
           heroku_app_name: ${{secrets.APP_NAME}}
           healthcheck: "https://${{secrets.APP_NAME}}.herokuapp.com/health"
           rollbackonhealthcheckfailed: true
-        run: echo '::set-output name=BASE_URL::https://${{secrets.APP_NAME}}.herokuapp.com'
         env:
           HD_SECRET: ${{secrets.SECRET}}
           HD_BASE_URL: "https://${{secrets.APP_NAME}}.herokuapp.com"
+      - name: Set output url
+        id: step_set_url
+        run: echo '::set-output name=BASE_URL::https://${{secrets.APP_NAME}}.herokuapp.com'
+        shell: bash
+
 
 
 
