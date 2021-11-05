@@ -131,3 +131,9 @@ dmypy.json
 #Static files needed only for deployment
 staticfiles/
 
+#Jetbrains cache
+.idea/
+
+#MacOS
+.DS_Store
+
