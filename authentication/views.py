@@ -22,4 +22,4 @@ class LoginView(FormView):
                 print(user.is_authenticated)
                 return redirect('home')
             messages.error(request, 'Email or password not correct')
-        return render(request, 'login.html', {'form': form})
+        return render(request, 'login.html', {'form': form}, status=401)

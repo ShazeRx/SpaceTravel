@@ -1,6 +1,10 @@
 from django.contrib import admin
 
-from home.models import MedicalExamination, Shuttle, SpaceStation, Offer, Reservation, CustomUser
+from authentication.models import CustomUser
+from flight_sheduler.models import Shuttle, Reservation
+from home.models import Offer
+from medical_sheduler.models import MedicalExamination
+from space_station.models import SpaceStation
 
 admin.site.register(MedicalExamination)
 admin.site.register(Shuttle)

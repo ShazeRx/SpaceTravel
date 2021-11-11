@@ -30,7 +30,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
     'home',
-    'authentication'
+    'authentication',
+    'flight_sheduler',
+    'space_station',
+    'medical_sheduler',
 ]
 
 MIDDLEWARE = [
