@@ -6,5 +6,6 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^health/', include('health_check.urls')),
-    path('', include('spacetravel_app.urls'))
+    path('', include('home.urls')),
+    path('authentication/', include('authentication.urls'))
 ]

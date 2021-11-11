@@ -1,16 +1,7 @@
 from django.contrib.auth.models import User, AbstractUser
 from django.db import models
-from spacetravel_app.managers import CustomUserManager
 
-
-class CustomUser(AbstractUser):
-    username = None
-    date_of_birth = models.DateField(blank=False, null=True)
-    email = models.EmailField(unique=True)
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name']
-
-    objects = CustomUserManager()
+from authentication.models import CustomUser
 
 
 class Offer(models.Model):
@@ -28,12 +19,10 @@ class Capacity(models.Model):
 
 class Shuttle(Capacity):
     name = models.CharField(null=False, blank=False, max_length=40)
-    pass
 
 
 class SpaceStation(Capacity):
     name = models.CharField(null=False, blank=False, max_length=200)
-    pass
 
 
 class Reservation(models.Model):
