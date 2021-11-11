@@ -1,0 +1,14 @@
+.mdl-mini-footer {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.mdl-layout__content {
+    position: relative;
+    flex-grow: 1;
+    z-index: 1;
+    display: inline-block;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
