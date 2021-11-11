@@ -1,6 +1,7 @@
-from django.contrib.auth import get_user_model
 from unittest import TestCase
+
 import pytest
+from django.contrib.auth import get_user_model
 
 
 class CustomUserManagerTests(TestCase):
